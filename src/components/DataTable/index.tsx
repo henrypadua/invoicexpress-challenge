@@ -4,7 +4,6 @@ import {
    useTable,
    usePagination,
    useFilters,
-   TableOptions,
    useGlobalFilter,
    Column
 } from 'react-table'
@@ -23,7 +22,7 @@ type Data = {
 }
 
 type TableProps = {
-   columns: readonly Column<any>[]
+   columns: readonly Column<object>[]
    data: Data[]
 }
 
@@ -48,6 +47,7 @@ export function DataTable({ columns, data }: TableProps) {
       gotoPage,
       nextPage,
       previousPage,
+      preFilteredRows,
       state: { pageIndex }
    } = useTable(
       {
@@ -109,6 +109,8 @@ export function DataTable({ columns, data }: TableProps) {
             pageCount={pageCount}
             pageIndex={pageIndex}
             pageOptions={pageOptions}
+            page={page}
+            preFilteredRows={preFilteredRows}
          />
       </S.Container>
    )

@@ -4,7 +4,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/11',
       client_name: 'Elon Tusk',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 123.42
    },
    {
@@ -20,7 +20,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/12',
       client_name: 'Rick Sanchez',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 123.42
    },
    {
@@ -28,7 +28,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/13',
       client_name: 'Jerry Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 123.42
    },
    {
@@ -60,7 +60,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/17',
       client_name: 'Elon Tusk',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 3264.42
    },
    {
@@ -76,7 +76,7 @@ export const documents = [
       type: 'Invoice-Receipt',
       number: '2019/19',
       client_name: 'Morty Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 3456.42
    },
    {
@@ -84,7 +84,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/20',
       client_name: 'Morty Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 2355.42
    },
    {
@@ -92,7 +92,7 @@ export const documents = [
       type: 'Invoice-Receipt',
       number: '2019/21',
       client_name: 'Rick Sanchez',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 23.42
    },
    {
@@ -100,7 +100,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/22',
       client_name: 'Elon Tusk',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 13.42
    },
    {
@@ -108,7 +108,7 @@ export const documents = [
       type: 'Invoice',
       number: '2016/23',
       client_name: 'Morty Smith',
-      date: '2016-02-31',
+      date: '2016-02-26',
       total_w_vat: 1523.42
    },
    {
@@ -116,7 +116,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/23',
       client_name: 'Jerry Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 6342.42
    },
    {
@@ -124,7 +124,7 @@ export const documents = [
       type: 'Invoice',
       number: '2017/11',
       client_name: 'Jerry Smith',
-      date: '2017-02-31',
+      date: '2017-02-26',
       total_w_vat: 32.21
    },
    {
@@ -132,7 +132,7 @@ export const documents = [
       type: 'Invoice',
       number: '2016/24',
       client_name: 'Morty Smith',
-      date: '2016-02-31',
+      date: '2016-02-26',
       total_w_vat: 3255.42
    },
    {
@@ -140,7 +140,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/24',
       client_name: 'Morty Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 734.32
    },
    {
@@ -148,7 +148,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/25',
       client_name: 'Jerry Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 467.42
    },
    {
@@ -156,7 +156,7 @@ export const documents = [
       type: 'Invoice',
       number: '2016/25',
       client_name: 'Morty Smith',
-      date: '2016-02-31',
+      date: '2016-02-26',
       total_w_vat: 23.12
    },
    {
@@ -164,7 +164,7 @@ export const documents = [
       type: 'Invoice',
       number: '2019/26',
       client_name: 'Morty Smith',
-      date: '2019-02-31',
+      date: '2019-02-26',
       total_w_vat: 23.42
    },
    {

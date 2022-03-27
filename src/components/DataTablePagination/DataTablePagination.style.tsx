@@ -28,5 +28,6 @@ export const Container = styled.div`
 
    span {
       font-size: 1.7rem;
+      text-align: center;
    }
 `

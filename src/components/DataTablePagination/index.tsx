@@ -1,3 +1,6 @@
+import pluralize from 'pluralize'
+import { Row } from 'react-table'
+
 import * as S from './DataTablePagination.style'
 
 type DataTablePaginationProps = {
@@ -9,6 +12,8 @@ type DataTablePaginationProps = {
    pageCount: number
    pageIndex: number
    pageOptions: number[]
+   page: Row<object>[]
+   preFilteredRows: Row<object>[]
 }
 
 export function DataTablePagination({
@@ -19,7 +24,9 @@ export function DataTablePagination({
    canNextPage,
    pageCount,
    pageIndex,
-   pageOptions
+   pageOptions,
+   page,
+   preFilteredRows
 }: DataTablePaginationProps) {
    return (
       <S.Container>
@@ -36,7 +43,11 @@ export function DataTablePagination({
             Page{' '}
             <strong>
                {pageIndex + 1} of {pageOptions.length}
-            </strong>
+            </strong>{' '}
+            <div>
+               Showing {pluralize('record', page.length, true)} of{' '}
+               {pluralize('record', preFilteredRows.length, true)}
+            </div>
          </span>
 
          <div>
