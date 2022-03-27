@@ -3,9 +3,18 @@ import { Column, useTable, usePagination } from 'react-table'
 import { DataTablePagination } from '../DataTablePagination'
 import * as S from './DataTable.style'
 
+type Data = {
+   status: string
+   type: string
+   number: string
+   client_name: string
+   date: string
+   total_w_vat: number
+}
+
 type DataTableProps = {
    columns: readonly Column<any>[]
-   data: readonly any[]
+   data: readonly Data[]
 }
 
 export function DataTable({ columns, data }: DataTableProps) {
