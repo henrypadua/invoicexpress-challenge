@@ -37,7 +37,7 @@ export function App() {
    const data = useMemo(() => documents, [])
 
    return (
-      <div>
+      <div style={{ marginBottom: '2rem' }}>
          <h1>Table</h1>
          <DataTable columns={columns} data={data} />
       </div>

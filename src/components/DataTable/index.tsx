@@ -1,5 +1,6 @@
-import { Column, useTable } from 'react-table'
+import { Column, useTable, usePagination } from 'react-table'
 
+import { DataTablePagination } from '../DataTablePagination'
 import * as S from './DataTable.style'
 
 type DataTableProps = {
@@ -8,11 +9,28 @@ type DataTableProps = {
 }
 
 export function DataTable({ columns, data }: DataTableProps) {
-   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-      useTable({
+   const {
+      getTableProps,
+      getTableBodyProps,
+      headerGroups,
+      prepareRow,
+      page,
+      canPreviousPage,
+      canNextPage,
+      pageOptions,
+      pageCount,
+      gotoPage,
+      nextPage,
+      previousPage,
+      state: { pageIndex }
+   } = useTable(
+      {
          columns,
-         data
-      })
+         data,
+         initialState: { pageIndex: 0, pageSize: 7 }
+      },
+      usePagination
+   )
 
    return (
       <S.Container>
@@ -30,7 +48,7 @@ export function DataTable({ columns, data }: DataTableProps) {
             </thead>
 
             <tbody {...getTableBodyProps()}>
-               {rows.map((row, index) => {
+               {page.map((row, index) => {
                   prepareRow(row)
                   return (
                      <tr {...row.getRowProps()} key={index}>
@@ -46,6 +64,17 @@ export function DataTable({ columns, data }: DataTableProps) {
                })}
             </tbody>
          </table>
+
+         <DataTablePagination
+            gotoPage={gotoPage}
+            previousPage={previousPage}
+            nextPage={nextPage}
+            canPreviousPage={canPreviousPage}
+            canNextPage={canNextPage}
+            pageCount={pageCount}
+            pageIndex={pageIndex}
+            pageOptions={pageOptions}
+         />
       </S.Container>
    )
 }
