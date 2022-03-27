@@ -5,15 +5,19 @@ export const Container = styled.div`
    border: 1px solid #2ec497;
    border-radius: 8px;
    padding: 2rem;
-   width: 50vw;
+   width: 80vw;
 
    table {
       border-collapse: collapse;
       width: 100%;
 
+      #filter {
+         margin-top: 10px;
+      }
+
       thead {
          tr {
-            height: 50px;
+            height: 80px;
             background-color: #2ec497;
 
             color: white;

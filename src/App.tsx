@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 
 import { DataTable } from './components/DataTable'
+import { SelectColumnFilter } from './components/DataTableFilter/SelectColumnFilter'
 import { documents } from './server/data'
 
 export function App() {
@@ -8,11 +9,15 @@ export function App() {
       () => [
          {
             Header: 'Status',
-            accessor: 'status'
+            accessor: 'status',
+            Filter: SelectColumnFilter,
+            filter: 'exactText'
          },
          {
             Header: 'Type',
-            accessor: 'type'
+            accessor: 'type',
+            Filter: SelectColumnFilter,
+            filter: 'exactText'
          },
          {
             Header: 'Number',

@@ -1,5 +1,15 @@
-import { Column, useTable, usePagination } from 'react-table'
+import { useMemo } from 'react'
 
+import {
+   useTable,
+   usePagination,
+   useFilters,
+   TableOptions,
+   useGlobalFilter,
+   Column
+} from 'react-table'
+
+import { DefaultColumnFilter } from '../DataTableFilter/DefaultColumnFilter'
 import { DataTablePagination } from '../DataTablePagination'
 import * as S from './DataTable.style'
 
@@ -12,12 +22,19 @@ type Data = {
    total_w_vat: number
 }
 
-type DataTableProps = {
+type TableProps = {
    columns: readonly Column<any>[]
-   data: readonly Data[]
+   data: Data[]
 }
 
-export function DataTable({ columns, data }: DataTableProps) {
+export function DataTable({ columns, data }: TableProps) {
+   const defaultColumn = useMemo(
+      () => ({
+         Filter: DefaultColumnFilter
+      }),
+      []
+   )
+
    const {
       getTableProps,
       getTableBodyProps,
@@ -36,8 +53,11 @@ export function DataTable({ columns, data }: DataTableProps) {
       {
          columns,
          data,
+         defaultColumn,
          initialState: { pageIndex: 0, pageSize: 7 }
       },
+      useFilters,
+      useGlobalFilter,
       usePagination
    )
 
@@ -50,6 +70,12 @@ export function DataTable({ columns, data }: DataTableProps) {
                      {headerGroup.headers.map((column, index) => (
                         <th {...column.getHeaderProps()} key={index}>
                            {column.render('Header')}
+
+                           <div id="filter">
+                              {column.canFilter
+                                 ? column.render('Filter')
+                                 : null}
+                           </div>
                         </th>
                      ))}
                   </tr>
