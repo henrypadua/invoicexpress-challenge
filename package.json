@@ -10,6 +10,7 @@
       "test:watch": "jest --watch --maxWorkers=25%"
    },
    "dependencies": {
+      "axios": "^0.26.1",
       "pluralize": "^8.0.0",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
@@ -43,9 +44,11 @@
       "typescript": "^4.5.4",
       "vite": "^2.8.0"
    },
-   "jest":{
+   "jest": {
       "testEnvironment": "jsdom",
-      "testPathIgnorePatterns": ["/node_modules/"],
+      "testPathIgnorePatterns": [
+         "/node_modules/"
+      ],
       "collectCoverage": true,
       "collectCoverageFrom": [
          "src/**/*.ts(x)?",
@@ -57,8 +60,10 @@
       ],
       "testMatch": [
          "<rootDir>/src/**/*.test.tsx"
-       ],
-      "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+      ],
+      "setupFilesAfterEnv": [
+         "<rootDir>/jest.setup.ts"
+      ],
       "moduleNameMapper": {
          "\\.(css|less|sass|scss)$": "identity-obj-proxy"
       }

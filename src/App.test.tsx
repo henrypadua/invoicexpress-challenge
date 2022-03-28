@@ -1,14 +1,20 @@
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 
 import { App } from './App'
 
-describe('App test', () => {
-   it('should be able render component DataTable', () => {
-      render(<App />)
+jest.mock('axios', () => ({ ...jest.requireActual('axios'), get: jest.fn() }))
 
-      screen.getByRole('row', {
-         name: 'Paid Invoice-Receipt 2019/15 Elon Tusk 2019-03-01 1223.42'
+describe('App test', () => {
+   it('should be able render component DataTable', async () => {
+      await waitFor(() => {
+         render(<App />)
+      })
+
+      await waitFor(() => {
+         screen.getByRole('row', {
+            name: 'Final Invoice 2019/11 Elon Tusk 2019-02-26 123.42'
+         })
       })
    })
 })
