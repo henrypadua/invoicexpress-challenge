@@ -1,5 +1,9 @@
 # React Challenge
 
+## Link to the github pages
+
+- [Github Pages](https://henrypadua.github.io/invoicexpress-challenge/)
+
 ## ✨ Technologies
 
 This project was developed with the following technologies:
