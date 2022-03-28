@@ -22,7 +22,7 @@ The project can be built with npm or yarn, so choose one of the approach bellow 
 
 ### Clone the repository with the command:
 ```shell
-git clone
+git clone https://github.com/henrypadua/invoicexpress-challenge.git
 ```
 ### Install the dependencies with the command:
 ```shell
