@@ -30,8 +30,11 @@ export function SelectColumnFilter({
          onChange={(e) => {
             setFilter(e.target.value || '')
          }}
+         data-testid="select"
       >
-         <option value="">All</option>
+         <option value="" data-testid="select-option">
+            All
+         </option>
          {options.map((option, i) => (
             <option key={i} value={option}>
                {option}

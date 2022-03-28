@@ -12,8 +12,8 @@ type DataTablePaginationProps = {
    pageCount: number
    pageIndex: number
    pageOptions: number[]
-   page: Row<object>[]
-   preFilteredRows: Row<object>[]
+   page?: Row<object>[]
+   preFilteredRows?: Row<object>[]
 }
 
 export function DataTablePagination({
@@ -33,8 +33,8 @@ export function DataTablePagination({
          <div>
             {canPreviousPage && (
                <>
-                  <button onClick={() => gotoPage(0)}>{'<<'}</button>
-                  <button onClick={() => previousPage()}>{'<'}</button>
+                  <button onClick={() => gotoPage(0)}>First Page</button>
+                  <button onClick={() => previousPage()}>Prev</button>
                </>
             )}
          </div>
@@ -45,17 +45,17 @@ export function DataTablePagination({
                {pageIndex + 1} of {pageOptions.length}
             </strong>{' '}
             <div>
-               Showing {pluralize('record', page.length, true)} of{' '}
-               {pluralize('record', preFilteredRows.length, true)}
+               Showing {pluralize('record', page?.length, true)} of{' '}
+               {pluralize('record', preFilteredRows?.length, true)}
             </div>
          </span>
 
          <div>
             {canNextPage && (
                <>
-                  <button onClick={() => nextPage()}>{'>'}</button>
+                  <button onClick={() => nextPage()}>Next</button>
                   <button onClick={() => gotoPage(pageCount - 1)}>
-                     {'>>'}
+                     Last Page
                   </button>
                </>
             )}

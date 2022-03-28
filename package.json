@@ -6,7 +6,8 @@
       "dev": "vite",
       "build": "tsc && vite build",
       "preview": "vite preview",
-      "test": "jest"
+      "test": "jest --maxWorkers=50%",
+      "test:watch": "jest --watch --maxWorkers=25%"
    },
    "dependencies": {
       "pluralize": "^8.0.0",
@@ -16,11 +17,12 @@
       "styled-components": "^5.3.5"
    },
    "devDependencies": {
-      "@babel/core": "^7.17.8",
       "@babel/preset-env": "^7.16.11",
+      "@babel/preset-react": "^7.16.7",
       "@babel/preset-typescript": "^7.16.7",
+      "@testing-library/jest-dom": "^5.16.3",
       "@testing-library/react": "^12.1.4",
-      "@types/jest": "^27.4.1",
+      "@testing-library/user-event": "^13.5.0",
       "@types/pluralize": "^0.0.29",
       "@types/react": "^17.0.33",
       "@types/react-dom": "^17.0.10",
@@ -29,16 +31,36 @@
       "@typescript-eslint/eslint-plugin": "^5.16.0",
       "@typescript-eslint/parser": "^5.16.0",
       "@vitejs/plugin-react": "^1.0.7",
-      "babel-jest": "^27.5.1",
       "eslint": "^8.12.0",
       "eslint-config-prettier": "^8.5.0",
       "eslint-plugin-import-helpers": "^1.2.1",
       "eslint-plugin-prettier": "^4.0.0",
       "eslint-plugin-react": "^7.29.4",
       "eslint-plugin-react-hooks": "^4.3.0",
+      "identity-obj-proxy": "^3.0.0",
       "jest": "^27.5.1",
       "prettier": "^2.6.1",
       "typescript": "^4.5.4",
       "vite": "^2.8.0"
+   },
+   "jest":{
+      "testEnvironment": "jsdom",
+      "testPathIgnorePatterns": ["/node_modules/"],
+      "collectCoverage": true,
+      "collectCoverageFrom": [
+         "src/**/*.ts(x)?",
+         "!src/**/*.d.ts",
+         "!src/**/*.style.ts(x)",
+         "!src/styles/*.ts",
+         "!src/server/*.ts",
+         "!src/main.tsx"
+      ],
+      "testMatch": [
+         "<rootDir>/src/**/*.test.tsx"
+       ],
+      "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+      "moduleNameMapper": {
+         "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+      }
    }
 }

@@ -1,43 +1,11 @@
 import { useMemo } from 'react'
 
 import { DataTable } from './components/DataTable'
-import { SelectColumnFilter } from './components/DataTableFilter/SelectColumnFilter'
+import { columnsDataTable } from './server/columns'
 import { documents } from './server/data'
 
 export function App() {
-   const columns = useMemo(
-      () => [
-         {
-            Header: 'Status',
-            accessor: 'status',
-            Filter: SelectColumnFilter,
-            filter: 'exactText'
-         },
-         {
-            Header: 'Type',
-            accessor: 'type',
-            Filter: SelectColumnFilter,
-            filter: 'exactText'
-         },
-         {
-            Header: 'Number',
-            accessor: 'number'
-         },
-         {
-            Header: 'Client Name',
-            accessor: 'client_name'
-         },
-         {
-            Header: 'Date',
-            accessor: 'date'
-         },
-         {
-            Header: 'Total',
-            accessor: 'total_w_vat'
-         }
-      ],
-      []
-   )
+   const columns = useMemo(() => columnsDataTable, [])
 
    const data = useMemo(() => documents, [])
 

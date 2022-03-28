@@ -19,6 +19,7 @@ export function DefaultColumnFilter({
    return (
       <S.Input
          value={filterValue || ''}
+         name="default-column-filter"
          onChange={(e) => {
             setFilter(e.target.value || '')
          }}
